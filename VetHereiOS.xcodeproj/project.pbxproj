@@ -10,9 +10,33 @@
 		F8A459122CC75B84001D4255 /* VetHereiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetHereiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F80A250C2CD207A80090AC5D /* Exceptions for "VetHereiOS" folder in "VetHereiOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				View/Utils/StringToCLLocation.swift,
+			);
+			target = F8A459112CC75B84001D4255 /* VetHereiOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		F80A250D2CD207A80090AC5D /* Exceptions for "VetHereiOS" folder in "Copy Bundle Resources" phase from "VetHereiOS" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = F8A459102CC75B84001D4255 /* Resources */;
+			membershipExceptions = (
+				View/Utils/StringToCLLocation.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F8A459142CC75B84001D4255 /* VetHereiOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F80A250C2CD207A80090AC5D /* Exceptions for "VetHereiOS" folder in "VetHereiOS" target */,
+				F80A250D2CD207A80090AC5D /* Exceptions for "VetHereiOS" folder in "Copy Bundle Resources" phase from "VetHereiOS" target */,
+			);
 			path = VetHereiOS;
 			sourceTree = "<group>";
 		};
