@@ -17,7 +17,7 @@ struct MapAnnotationView: View {
         VStack {
             Image(systemName: "mappin")
                 .resizable()
-                .frame(width: 18, height: 40)
+                .frame(width: 15, height: 40)
                 .foregroundColor(.blue)
                 .onTapGesture {
                     action()

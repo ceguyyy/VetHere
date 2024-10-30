@@ -5,79 +5,61 @@
 //  Created by Christian Gunawan on 30/10/24.
 //
 
-import MapKit
 import SwiftUI
+import MapKit
 
 struct NearbyVetDetailView: View {
   var vet: VetModel
-  @State private var selectedSegment = 0
-  let segments = ["Appointment", "Information"]
+    @State private var selectedSegment: DetailEnum = .appointment
+
 
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 4) {
-        Image(vet.imageName)
-          .resizable()
-          .scaledToFit()
-          .frame(height: 250)
-          .clipShape(RoundedRectangle(cornerRadius: 10))
-
-        Text(vet.vetName)
-          .font(.largeTitle)
-          .fontWeight(.bold)
-          .padding(.horizontal)
-
-        Text("\(vet.range, specifier: "%.1f") Km away")
-          .font(.subheadline)
-          .foregroundColor(.gray)
-          .padding(.horizontal)
-
-        Text("Open \(vet.closingTime)")
-          .font(.subheadline)
-          .foregroundColor(.gray)
-          .padding(.horizontal)
-
+          
+          Image(vet.imageName)
+              .resizable()
+              .frame(height: 250)
+          
+          VStack(alignment: .leading, spacing: 4) {
+              Text(vet.vetName)
+              .font(.largeTitle)
+              .fontWeight(.bold)
+              .padding(.horizontal)
+            
+              Text("\(vet.range, specifier: "%.1f") Km away")
+              .font(.subheadline)
+              .foregroundColor(.gray)
+              .padding(.horizontal)
+            
+              Text("Open \(vet.closingTime)")
+              .font(.subheadline)
+              .foregroundColor(.gray)
+              .padding(.horizontal)
+          }
+        
         Picker("Options", selection: $selectedSegment) {
-          ForEach(0..<segments.count) { index in
-            Text(segments[index])
-              .tag(index)
+          ForEach(DetailEnum.allCases) { segment in
+            Text(segment.rawValue).tag(segment)
           }
         }
         .pickerStyle(SegmentedPickerStyle())
         .padding()
-
-        if selectedSegment == 0 {
-          ForEach(vet.doctors, id: \.id) { doctor in
-            DoctorCardComponent(doctor: doctor).padding(4)
-          }.padding(.horizontal)
-        } else if selectedSegment == 1 {
-          VStack {
-            if let latitude = Double(vet.latitude), let longitude = Double(vet.longitude) {
-              MapComponent(latitude: latitude, longitude: longitude)
-                .frame(height: 300)
-                .padding(.horizontal)
-                .cornerRadius(10)
-
-            } else {
-              Text("Invalid coordinates")
-                .foregroundColor(.red)
-                .padding()
-            }
-
+        
+       
+        Group {
+          switch selectedSegment {
+          case .appointment:
+              DoctorListComponent(doctors: vet.doctors)
+          case .information:
+              MapAndAddressComponent(vet: vet)
           }
-          Spacer()
-
-          Text("\(vet.address)")
-
-            .padding(.horizontal)
-
         }
       }
     }
     .navigationTitle(vet.vetName)
     .navigationBarTitleDisplayMode(.inline)
   }
-
 }
 
 #Preview {
@@ -88,6 +70,10 @@ struct NearbyVetDetailView: View {
     DoctorModel(
       imageName: "doctor", name: "Dr. Bob Johnson", specialization: "Animal Nutritionist",
       rating: 4, phoneNumber: "555-5678"),
+    DoctorModel(
+      imageName: "doctor", name: "Dr. Holly Williams", specialization: "Animal Surgery",
+      rating: 4, phoneNumber: "555-5678"),
+    
   ]
 
   let sampleVet = VetModel(
@@ -96,7 +82,7 @@ struct NearbyVetDetailView: View {
     rating: 5,
     range: 2.5,
     closingTime: "6 PM",
-    address: "Friendly and experienced veterinarians available for your pets.",
+    address: "Jalan Jambu",
     doctors: sampleDoctors,
     latitude: "-6.3020781",
     longitude: "106.6522981"

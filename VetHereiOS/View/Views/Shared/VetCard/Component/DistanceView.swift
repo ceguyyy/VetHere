@@ -15,6 +15,7 @@ struct DistanceView: View {
             Image(systemName: "map.fill")
             Text("\(distance, specifier: "%.1f") Km")
                 .font(.system(size: 12))
+                .foregroundColor(Color("TextColor"))
         }
     }
 }

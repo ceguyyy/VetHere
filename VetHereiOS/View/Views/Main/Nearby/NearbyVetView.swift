@@ -13,14 +13,13 @@ struct NearbyVetView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 16) {
+                VStack(alignment: .leading,spacing: 16) {
                     ForEach(viewModel.filteredVets) { vet in
                         NavigationLink(destination: NearbyVetDetailView(vet: vet)) {
                             VetCardComponent(viewModel: VetCardViewModel(vet: vet))
                         }
                     }
                 }
-                .padding()
             }
             .searchable(text: $viewModel.searchText, prompt: "Search for vets")
             .navigationTitle(tabBarViewModel.currentTabTitle)

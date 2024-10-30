@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct DoctorActionsView: View {
-    var onChat: () -> Void
-    var onBook: () -> Void
+    var onChat: () -> ()
+    var onBook: () -> ()
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -19,4 +19,15 @@ struct DoctorActionsView: View {
         }
         .padding()
     }
+}
+
+#Preview {
+    DoctorActionsView(
+        onChat: {
+            print("Chat tapped")
+        },
+        onBook: {
+            print("Book tapped")
+        }
+    )
 }

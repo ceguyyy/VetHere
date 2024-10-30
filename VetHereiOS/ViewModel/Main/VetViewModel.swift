@@ -17,20 +17,19 @@ class VetViewModel: ObservableObject {
     }
 
     func fetchVets() {
-        // Mock data for doctors unique to each vet
         let doctorsForVet1: [DoctorModel] = [
-            DoctorModel(imageName: "doctor", name: "Dr. Alice Smith", specialization: "Veterinary Surgeon", rating: 5, phoneNumber: "555-1234"),
-            DoctorModel(imageName: "doctor", name: "Dr. Bob Johnson", specialization: "Animal Nutritionist", rating: 4, phoneNumber: "555-5678")
+            DoctorModel(imageName: "doctor", name: "Dr. Alice Smith", specialization: "Veterinary Surgeon", rating: 5, phoneNumber: "6285157449632"),
+            DoctorModel(imageName: "doctor", name: "Dr. Bob Johnson", specialization: "Animal Nutritionist", rating: 4, phoneNumber: "6285157449632")
         ]
 
         let doctorsForVet2: [DoctorModel] = [
-            DoctorModel(imageName: "doctor", name: "Dr. Carol Lee", specialization: "Veterinary Oncologist", rating: 5, phoneNumber: "555-8765"),
-            DoctorModel(imageName: "doctor", name: "Dr. David Brown", specialization: "Emergency Veterinarian", rating: 5, phoneNumber: "555-9999")
+            DoctorModel(imageName: "doctor", name: "Dr. Carol Lee", specialization: "Veterinary Oncologist", rating: 5, phoneNumber: "6285157449632"),
+            DoctorModel(imageName: "doctor", name: "Dr. David Brown", specialization: "Emergency Veterinarian", rating: 5, phoneNumber: "6285157449632")
         ]
 
         let doctorsForVet3: [DoctorModel] = [
-            DoctorModel(imageName: "doctor", name: "Dr. Emily White", specialization: "Veterinary Dermatologist", rating: 4, phoneNumber: "555-1111"),
-            DoctorModel(imageName: "doctor", name: "Dr. Frank Miller", specialization: "Veterinary Surgeon", rating: 4, phoneNumber: "555-2222")
+            DoctorModel(imageName: "doctor", name: "Dr. Emily White", specialization: "Veterinary Dermatologist", rating: 4, phoneNumber: "6285157449632"),
+            DoctorModel(imageName: "doctor", name: "Dr. Frank Miller", specialization: "Veterinary Surgeon", rating: 4, phoneNumber: "6285157449632mau ")
         ]
 
         self.vets = [
@@ -41,7 +40,7 @@ class VetViewModel: ObservableObject {
                 range: 2.5,
                 closingTime: "6 PM",
                 address: "Jl. Grand Boulevard, BSD Green Office Park 9, BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345",
-                doctors: doctorsForVet1, // Unique doctors for this vet
+                doctors: doctorsForVet1,
                 latitude: "-6.3020781",
                 longitude: "106.6522981"
 

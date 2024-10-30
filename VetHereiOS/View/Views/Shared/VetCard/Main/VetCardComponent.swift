@@ -22,8 +22,8 @@ struct VetCardComponent: View {
                   }
                   .padding()
               }
-              .foregroundColor(Color.black)
-              .background(Color("ColorDoctorCardBG"))
+              .foregroundColor(Color("TextColor"))
+              .background(Color("ColorCard"))
               .frame(width: 361)
               .clipShape(RoundedRectangle(cornerRadius: 10))
           }
@@ -44,7 +44,7 @@ struct VetCardComponent: View {
         rating: 5,
         range: 2.5,
         closingTime: "6 PM",
-        address: "Friendly and experienced veterinarians available for your pets.",
+        address: "Friendly and experienced veterinarians available for your petskdfnasidnaksjdnikashjdiasjdiasjdiasjdoiajdoiajdoasjdoasjdosajdoasj.",
         doctors: sampleDoctors,
         latitude: "-6.3020781",
         longitude: "106.6522981"

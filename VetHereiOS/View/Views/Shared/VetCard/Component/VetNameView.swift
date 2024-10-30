@@ -15,6 +15,7 @@ struct VetNameView: View {
         Text(vetName)
             .font(.system(size: 22, weight: .bold))
             .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundColor(Color("TextColor"))
     }
 }
 

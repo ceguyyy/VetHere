@@ -14,6 +14,7 @@
 		F80A250C2CD207A80090AC5D /* Exceptions for "VetHereiOS" folder in "VetHereiOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				View/Utils/DateFormatterUtil.swift,
 				View/Utils/StringToCLLocation.swift,
 			);
 			target = F8A459112CC75B84001D4255 /* VetHereiOS */;
@@ -25,6 +26,7 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = F8A459102CC75B84001D4255 /* Resources */;
 			membershipExceptions = (
+				View/Utils/DateFormatterUtil.swift,
 				View/Utils/StringToCLLocation.swift,
 			);
 		};

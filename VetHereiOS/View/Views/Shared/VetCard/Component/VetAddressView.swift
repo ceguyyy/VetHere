@@ -16,6 +16,7 @@ struct VetAddressView: View {
             .font(.system(size: 13))
             .foregroundColor(.black)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundColor(Color("TextColor"))
     }
 }
 

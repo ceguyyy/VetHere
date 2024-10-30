@@ -8,32 +8,44 @@ import SwiftUI
 
 struct DoctorCardComponent: View {
     let doctor: DoctorModel
+    @StateObject private var viewModel = DoctorCardViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center) {
-                DoctorImageView(imageName: doctor.imageName)
-                
-                DoctorInfoView(
-                    name: doctor.name,
-                    specialization: doctor.specialization,
-                    rating: doctor.rating
-                )
+                Image(doctor.imageName)
+                    .resizable()
+                    .frame(width: 88, height: 88)
+                    .cornerRadius(10)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(doctor.name)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                    
+                    Text(doctor.specialization)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    RatingView(rating: doctor.rating)
+                }
                 
                 Spacer()
                 
                 DoctorActionsView(
                     onChat: {
-                        print("Chat")
+                        openWhatsApp(phoneNumber: "\(doctor.phoneNumber)", message: "\(doctor.name)")
+                        
+                        viewModel.addChatInfo(doctor: doctor)
                     },
                     onBook: {
-                        print("Booked")
+                        print("\(doctor.name) Booked")
                     }
                 )
             }
         }
         .frame(width: 361, height: 88)
-        .background(Color("ColorDoctorCardBG"))
+        .background(Color("ColorCard"))
         .cornerRadius(10)
     }
 }

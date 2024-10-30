@@ -26,7 +26,7 @@ struct VetDetailsView: View {
                 .font(.system(size: 12))
             
             ClosingTimeView(closingTime: vet.closingTime)
-        }
+        }    .foregroundColor(Color("TextColor"))
     }
 }
 

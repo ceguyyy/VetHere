@@ -15,6 +15,7 @@ struct ClosingTimeView: View {
             Image(systemName: "clock.fill")
             Text("Until \(closingTime)")
                 .font(.system(size: 12))
+                .foregroundColor(Color("TextColor"))
         }
     }
 }

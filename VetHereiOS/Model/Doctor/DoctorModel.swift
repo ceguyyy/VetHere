@@ -13,4 +13,5 @@ struct DoctorModel: Identifiable {
     var name: String
     var specialization: String
     var rating: Int
-    var phoneNumber: String}
+    var phoneNumber: String
+}
