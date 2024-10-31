@@ -16,7 +16,6 @@ struct NearbyVetDetailView: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 4) {
-          
           Image(vet.imageName)
               .resizable()
               .frame(height: 250)
